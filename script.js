@@ -39,36 +39,16 @@ window.addEventListener('load', () => {
 
     class Game {
         constructor() {
-            this.x = 0;
-            this.y = 0;
             this.minX = 0;
             this.maxX = 0;
             this.minY = 0;
             this.maxY = 0;
-            this.visualScale = 1;
-            this.players = ['x', 'o'];
-            this.currentPlayer = this.players[ Math.random() > 0.5 ? 0 : 1 ];
             this.turnFinished = false;
             this.fields = [new Field(0, 0, this.currentPlayer)];
         }
 
         nextTurn() {
 
-        }
-
-        update(input, deltaTime) {
-            //if(input.keys.includes('w')) this.y -= deltaDistance;
-            //if(input.keys.includes('a')) this.x -= deltaDistance;
-            //if(input.keys.includes('s')) this.y += deltaDistance;
-            //if(input.keys.includes('d')) this.x += deltaDistance;
-        }
-
-        draw() {
-
-        }
-
-        addField() {
-            
         }
     }
 
@@ -81,8 +61,6 @@ window.addEventListener('load', () => {
 
 
     class Field {
-
-
         constructor(x, y) {
             this.x = x;
             this.y = y;
@@ -105,19 +83,13 @@ window.addEventListener('load', () => {
         CANVAS_WIDTH = canvas.getBoundingClientRect().width;
         CANVAS_HEIGHT = canvas.getBoundingClientRect().height;
 
-        // wait for mouse click
-        // if mouse click: game...
-
-
-        game.update(input, deltaTime);
-        game.draw();
 
 
         // TODO: delete if statement below
         if (iterationsToRefreshFPS > 0) {
             iterationsToRefreshFPS--;
         } else {
-            screenInfoH2.innerText = `Width: ${CANVAS_WIDTH} x Height: ${CANVAS_HEIGHT} | FPS: ${Math.floor(1000/deltaTime)}, deltaTime: ${deltaTime}`; // TODO: delete later
+            screenInfoH2.innerText = `Width: ${CANVAS_WIDTH} x Height: ${CANVAS_HEIGHT} | FPS: ${Math.floor(1000/deltaTime)}, deltaTime: ${Math.trunc(deltaTime * 10) / 10}`; // TODO: delete later
             iterationsToRefreshFPS = 50;
         }
         requestAnimationFrame(animate);
