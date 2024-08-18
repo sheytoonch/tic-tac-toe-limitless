@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #7fa6ce;
+    text-align: center;
+    padding: 1rem;
+    flex-shrink: 0; /* Prevent the header from shrinking */
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Enable scrolling if the canvas is larger */
+    background-color: rgb(111, 111, 111);
+}
+
+#canvas1 {
+    width: 2000px;
+    height: 2000px;
+    background-color: rgb(111, 111, 111);
+}
+
+.arrowImage {
+    width: 200px; /* Original width */
+    height: auto;
+    max-width: 100%; /* Prevents the images from growing beyond their container */
+}
+
+footer {
+    display: flex;
+    justify-content: center; /* Distribute images evenly within the footer */
+    background-color: #7fa6ce;
+    padding: 10px;
+}
+
+.arrowImage {
+    max-width: 25%; /* Each image can be up to 25% of the footer width, if space allows */
+    min-width: 75px;
+    max-height: 200px;
+    padding: 10px;
+}
